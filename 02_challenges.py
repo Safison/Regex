@@ -120,7 +120,7 @@ def exclude_words(text):
 
     For example: 
     - "I visited the north pole last year." should be "I visited the pole last year."
-    - "I study at northcoders." should be "I study at northcoders."
+    - "I study at Northcoders." should be "I study at Northcoders."
     - "IBM hired a lot of coders." should be "IBM hired a lot of ."
     """
     pass
@@ -188,6 +188,7 @@ def test_is_valid_countdown_correctly_detects_valid_combinations():
     assert is_valid_countdown("aaabbbccc")
     assert is_valid_countdown("eeeedddff")
     assert is_valid_countdown("aeiouwxyz")
+    assert is_valid_countdown('abejikosu')
     assert not is_valid_countdown("aeiouaxyz") 
     assert not is_valid_countdown("aabbbcccd") 
     assert not is_valid_countdown("aeiouvwxyz") 
@@ -247,12 +248,12 @@ def test_spot_the_contraction_spots_contractions():
 
 def test_exclude_words_excludes_separate_words_only():
     assert exclude_words("I visited the north pole last year") == "I visited the pole last year"
-    assert exclude_words("I study at northcoders") == "I study at northcoders"
+    assert exclude_words("I study at Northcoders") == "I study at Northcoders"
     assert exclude_words("IBM hired a lot of coders lately") == "IBM hired a lot of lately"
   
 
 def test_match_unique_digits_identifies_numbers_with_unique_digits(): 
     assert match_unique_digits("1234")
-    assert match_unique_digits("1233") 
+    assert not match_unique_digits("1233") 
     assert match_unique_digits("493710")
-    assert match_unique_digits("00") 
+    assert not match_unique_digits("00") 
