@@ -35,17 +35,17 @@ def test_is_valid_countdown_returns_true_for_a_valid_countdown():
 
 @skip_test
 def test_is_valid_countdown_returns_false_for_an_invalid_countdown():
-    assert is_valid_countdown("aeiouaxyz"), \
+    assert not is_valid_countdown("aeiouaxyz"), \
         format_err_msg(False, is_valid_countdown("aeiouaxyz"))
-    assert is_valid_countdown("aabbbcccd"), \
+    assert not is_valid_countdown("aabbbcccd"), \
         format_err_msg(False, is_valid_countdown("aabbbcccd"))
-    assert is_valid_countdown("aeiouvwxyz"), \
+    assert not is_valid_countdown("aeiouvwxyz"), \
         format_err_msg(False, is_valid_countdown("aeiouvwxyz"))
-    assert is_valid_countdown('aaaaaaaaa'), \
+    assert not is_valid_countdown('aaaaaaaaa'), \
         format_err_msg(False, is_valid_countdown("aaaaaaaaa"))
-    assert is_valid_countdown('bbbbbbbbb'), \
+    assert not is_valid_countdown('bbbbbbbbb'), \
         format_err_msg(False, is_valid_countdown("bbbbbbbbb"))
-    assert is_valid_countdown('aaaabbbb'), \
+    assert not is_valid_countdown('aaaabbbb'), \
         format_err_msg(False, is_valid_countdown("aaaabbbb"))
 
 

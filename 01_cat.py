@@ -16,7 +16,8 @@ def cat():
 def test_cat_matches_correctly():
     cat_match_object = cat().match('cat')
 
-    assert cat_match_object is not None
+    assert cat_match_object is not None, \
+        format_err_msg('match object', cat_match_object)
 
     assert cat_match_object.group() == 'cat', \
         format_err_msg('cat', cat_match_object.group())
@@ -29,7 +30,8 @@ def test_cat_matches_correctly():
 def test_matches_cat_at_start_of_string_correctly():
     cat_match_object = cat().match('cat11234')
 
-    assert cat_match_object is not None
+    assert cat_match_object is not None, \
+        format_err_msg('match object', cat_match_object)
 
     assert cat_match_object.group() == 'cat',  \
         format_err_msg(cat, cat_match_object.group())
@@ -42,7 +44,8 @@ def test_matches_cat_at_start_of_string_correctly():
 def test_matches_cat_at_end_of_string_correctly():
     cat_match_object = cat().search("36237cat")
 
-    assert cat_match_object is not None
+    assert cat_match_object is not None, \
+        format_err_msg('match object', cat_match_object)
 
     assert cat_match_object.group() == 'cat',  \
         format_err_msg(cat, cat_match_object.group())
@@ -55,7 +58,8 @@ def test_matches_cat_at_end_of_string_correctly():
 def test_matches_cat_in_the_middle_of_string_correctly():
     cat_match_object = cat().search('asdcatfgh')
 
-    assert cat_match_object is not None
+    assert cat_match_object is not None, \
+        format_err_msg('match object', cat_match_object)
 
     assert cat_match_object.group() == 'cat', \
         format_err_msg(cat, cat_match_object.group())

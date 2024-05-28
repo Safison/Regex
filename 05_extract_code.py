@@ -14,7 +14,8 @@ def extract_code(text):
     Somewhere in the middle of the string, there will be a series of
     consecutive digits composing a number
 
-    You should extract that number from the string and return it
+    You should extract that number from the string and return it as
+    an integer
     """
     pass
 

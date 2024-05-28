@@ -42,15 +42,15 @@ def test_returns_true_when_two_consecutive_ls_found():
 
 @skip_test
 def test_returns_false_when_exactly_two_consecutive_ls_not_found():
-    assert has_exactly_2_consecutive_ls("mile"), \
+    assert not has_exactly_2_consecutive_ls("mile"), \
         format_err_msg(False, has_exactly_2_consecutive_ls("mile"))
-    assert has_exactly_2_consecutive_ls("fly"), \
+    assert not has_exactly_2_consecutive_ls("fly"), \
         format_err_msg(False, has_exactly_2_consecutive_ls("fly"))
-    assert has_exactly_2_consecutive_ls("wellll"), \
+    assert not has_exactly_2_consecutive_ls("wellll"), \
         format_err_msg(False, has_exactly_2_consecutive_ls("wellll"))
-    assert has_exactly_2_consecutive_ls("mitchelllloyd"), \
+    assert not has_exactly_2_consecutive_ls("mitchelllloyd"), \
         format_err_msg(False, has_exactly_2_consecutive_ls("mitchelllloyd"))
-    assert has_exactly_2_consecutive_ls("l"), \
+    assert not has_exactly_2_consecutive_ls("l"), \
         format_err_msg(False, has_exactly_2_consecutive_ls("l"))
 
 
