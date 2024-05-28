@@ -163,4 +163,6 @@ def skip_test(testing_func):
 
 
 def format_err_msg(expected, received):
-    return f"{NORMAL_RED}expected {expected}, instead received {received}{DEFAULT}"
+    err_msg = (f"{NORMAL_RED}expected {expected}, instead received "
+               f"{received}{DEFAULT}")
+    return err_msg

@@ -368,7 +368,7 @@ class TestRunTestDecorator:
 
         captured = capsys.readouterr()
 
-        expected_feedback = (f"{BOLD_GREEN}{func_to_test.__name__}()"
+        expected_feedback = (f"{BOLD_GREEN}func_to_test()"
                              f"{NORMAL_GREEN}: Test passed ✅{DEFAULT}")
 
         assert expected_feedback in captured.out
@@ -385,7 +385,7 @@ class TestRunTestDecorator:
         with pytest.raises(AssertionError) as e:
             testing_function()
 
-        feedback_msg = (f"{BOLD_RED}{testing_function.__name__}(){NORMAL_RED}: "
+        feedback_msg = (f"{BOLD_RED}testing_function(){NORMAL_RED}: "
                         f"Test failed ❌, see error message below:{DEFAULT}\n")
         expected_calls = [call(feedback_msg)]
 
@@ -402,7 +402,7 @@ class TestRunTestDecorator:
         with pytest.raises(TypeError) as e:
             testing_function()
 
-        feedback_msg = (f"{BOLD_RED}{testing_function.__name__}(){NORMAL_RED}: "
+        feedback_msg = (f"{BOLD_RED}testing_function(){NORMAL_RED}: "
                         f"Test failed ❌, see error message below:{DEFAULT}\n")
         expected_calls = [call(feedback_msg)]
 
@@ -432,7 +432,7 @@ class TestSkipTestDecorator:
 
         captured = capsys.readouterr()
 
-        expected_feedback = (f"{BOLD_YELLOW}{func_to_test.__name__}()"
+        expected_feedback = (f"{BOLD_YELLOW}func_to_test()"
                              f"{NORMAL_YELLOW}: Test skipped 🔇{DEFAULT}")
 
         assert expected_feedback in captured.out
