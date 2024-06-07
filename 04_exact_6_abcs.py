@@ -6,9 +6,10 @@ import re
 
 
 def exact_6_abcs():
-    # Your pattern should match a string consisting of exactly 6 of a, b or
-    #  c consecutively
-    # You should look up regex anchors for this exercise
+    # Your pattern should match a string consisting of exactly 6 characters. 
+    # These characters may only consist of 'a', 'b' or 'c' in any order.
+    # You should look up regex anchors for this exercise.
+    
     YOUR_REGEX_HERE = 'x'
     # replace 'x' with an appropriate regular expression pattern
     return re.compile(YOUR_REGEX_HERE)
