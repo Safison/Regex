@@ -16,6 +16,9 @@ def is_valid_sort_code(text):
 
     You should return True if the sort code is valid, and False otherwise
     """
+    reg = re.compile("^[0-9]{2}-[0-9]{2}-[0-9]{2}$")
+    return reg.match(text)
+
     pass
 
 
@@ -29,7 +32,7 @@ def test_is_valid_sort_code_returns_true_if_sort_code_in_the_correct_format():
         format_err_msg(True, is_valid_sort_code("85-16-23"))
 
 
-@skip_test
+@run_test
 def test_is_valid_sort_code_returns_false_if_sort_code_NOT_in_the_correct_format():
     assert not is_valid_sort_code("51-349-67"), \
         format_err_msg(False, is_valid_sort_code("51-349-67"))
