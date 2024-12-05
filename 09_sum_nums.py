@@ -16,6 +16,12 @@ def sum_nums(text):
 
     If there are no numbers, you should return 0
     """
+    total = 0
+    reg = re.compile("[0-9]+")
+    numbers = reg.findall(text)
+    for num in numbers:
+        total += int(num)
+    return total
     pass
 
 
